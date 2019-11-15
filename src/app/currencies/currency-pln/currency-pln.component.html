@@ -1,0 +1,17 @@
+<div class="container">
+  <div *ngIf="name === 'BTC'" class="curr-background-color col-3">
+    <div class="row">
+      BTC/PLN<div class="ml-1 curr-number-color">{{currencyBTC?.bid | number: '2.0-3'}}</div>
+    </div>
+  </div>
+  <div *ngIf="name === 'LTC'" class="curr-background-color col-3">
+    <div class="row">
+      LTC/PLN<div class="ml-1">{{currencyLTC?.bid | number: '2.0-3'}}</div>
+    </div>
+  </div>
+  <div *ngIf="name === 'ETH'" class="curr-background-color col-3">
+    <div class="row">
+      ETH/PLN<div class="ml-1">{{currencyETH?.bid | number: '2.0-3'}}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <input placeholder="Login" type="text" formControlName="user" required>
+    <input placeholder="Hasło" type="password" formControlName="pass" required>
+    <button type="submit">Zaloguj</button>
+    <div *ngIf="form.get('user').invalid && (form.get('pass').dirty || form.get('user').touched)">
+      <div *ngIf="form.get('user').errors.required" class="error">Login jest wymagany.</div>
+    </div>
+    <div *ngIf="form.get('pass').invalid && (form.get('pass').dirty || form.get('pass').touched)">
+      <div *ngIf="form.get('pass').errors.required" class="error">Hasło jest wymagane.</div>
+    </div>
+
+  </form>
+</div>
