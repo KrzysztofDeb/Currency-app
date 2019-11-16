@@ -11,26 +11,21 @@ export class CurrencyPlnComponent implements OnInit {
 
   @Input()
   public name: string;
-
-  public currencyBTC: Currency;
-  public currencyLTC: Currency;
-  public currencyETH: Currency;
+  public currency: Currency;
 
   constructor(private currencyService: CurrencyService) {
-    this.currencyBTC = {};
-    this.currencyLTC = {};
-    this.currencyETH = {};
+    this.currency = {};
   }
 
   public ngOnInit(): void {
-    if (this.name === 'BTC') {
-      this.currencyService.currentCurrencyBTC.subscribe(res => this.currencyBTC = res);
+    if (this.name === 'BTC/PLN') {
+      this.currencyService.currentCurrencyBTC.subscribe(res => this.currency = res);
     }
-    if (this.name === 'LTC') {
-      this.currencyService.currentCurrencyLTC.subscribe(res => this.currencyLTC = res);
+    if (this.name === 'LTC/PLN') {
+      this.currencyService.currentCurrencyLTC.subscribe(res => this.currency = res);
     }
-    if (this.name === 'ETH') {
-      this.currencyService.currentCurrencyETH.subscribe(res => this.currencyETH = res);
+    if (this.name === 'ETH/PLN') {
+      this.currencyService.currentCurrencyETH.subscribe(res => this.currency = res);
     }
   }
 
